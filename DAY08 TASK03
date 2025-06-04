@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repeat Text in Ordered List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        ol {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Repeated Text Output</h2>
+    <ol id="outputList"></ol>
+    <script>
+        function displayRepeatedText() {
+            let userText = prompt("Enter the text to display:");
+            if (userText === null || userText.trim() === "") {
+                document.getElementById("outputList").innerHTML = "<li>No text provided.</li>";
+                return;
+            }
+            let repeatCount = prompt("How many times should the text be displayed?");
+            repeatCount = Number(repeatCount);
+            const outputList = document.getElementById("outputList");
+            outputList.innerHTML = "";
+            if (isNaN(repeatCount) || repeatCount < 1) {
+                outputList.innerHTML = "<li>Invalid number of repetitions.</li>";
+                return;
+            }
+            for (let i = 1; i <= repeatCount; i++) {
+                const listItem = document.createElement("li");
+                listItem.textContent = userText;
+                outputList.appendChild(listItem);
+            }
+        }
+        displayRepeatedText();
+    </script>
+</body>
+</html>

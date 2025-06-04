@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minimal Calculator UI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calculator {
+      background-color: #444;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #333;
+      width: max-content;
+    }
+    .display {
+      width: 200px;
+      height: 35px;
+      font-size: 18px;
+      text-align: left;
+      padding: 5px 8px;
+      border: none;
+      border-radius: 2px;
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 45px);
+      gap: 6px;
+      justify-content: center;
+    }
+    .buttons input {
+      height: 42px;
+      font-size: 15px;
+      background-color: #19b48d;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+    .buttons input:hover {
+      background-color: #19b48d;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="calculator">
+  <input type="text" class="display" value="0" readonly>
+  <div class="buttons">
+    <input type="button" value="C">
+    <input type="button" value="%">
+    <input type="button" value="⇐">
+    <input type="button" value="/">
+    <input type="button" value="7">
+    <input type="button" value="8">
+    <input type="button" value="9">
+    <input type="button" value="*">
+    <input type="button" value="4">
+    <input type="button" value="5">
+    <input type="button" value="6">
+    <input type="button" value="-">
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="+">
+    <input type="button" value="00">
+    <input type="button" value="0">
+    <input type="button" value=".">
+    <input type="button" class="equal" value="=">
+  </div>
+</div>
+</body>
+</html>

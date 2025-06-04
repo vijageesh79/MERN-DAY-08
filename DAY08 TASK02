@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        #output {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Grade for Entered Score</h2>
+    <div id="output"></div>
+    <script>
+        function getGrade(score) {
+            if (score >= 90 && score <= 100) return 'S';
+            else if (score >= 80 && score <= 89) return 'A';
+            else if (score >= 70 && score <= 79) return 'B';
+            else if (score >= 60 && score <= 69) return 'C';
+            else if (score >= 50 && score <= 59) return 'D';
+            else if (score >= 40 && score <= 49) return 'E';
+            else if (score >= 0 && score < 40) return 'F';
+            else return null;
+        }
+        function displayGrade() {
+            let input = prompt("Enter your score (0 - 100):");
+            const outputDiv = document.getElementById("output");
+
+            if (input === null || input.trim() === "") {
+                outputDiv.textContent = "No input provided.";
+                outputDiv.style.color = "red";
+                return;
+            }
+            let score = Number(input);
+            if (isNaN(score)) {
+                outputDiv.textContent = `"${input}" is not a valid number.`;
+                outputDiv.style.color = "red";
+            } else {
+                let grade = getGrade(score);
+                if (grade === null) {
+                    outputDiv.textContent = `Invalid score: ${score}. Please enter a value between 0 and 100.`;
+                    outputDiv.style.color = "red";
+                } else {
+                    outputDiv.textContent = `You scored ${score}. Your grade is '${grade}'.`;
+                    outputDiv.style.color = "green";
+                }
+            }
+        }
+        displayGrade();
+    </script>
+</body>
+</html>
